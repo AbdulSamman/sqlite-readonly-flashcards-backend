@@ -2,3 +2,6 @@
 
 ### BASE
 {{url}}
+
+### GET test
+GET {{url}}/test
