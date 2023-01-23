@@ -16,5 +16,12 @@ GET {{url}}/flashcards/2798
 ### ALL FLASHCARDS IN A CATEGORY 
 GET {{url}}/flashcards/categories/emmet
 
+
+### SINGLE FLASHCARD: ERROR TEST NOT A NUMBER 
+{{url}}/flashcards/skjfksdfj
+
+### SINGLE FLASHCARD: ERROR TEST ID OUT OF RANGE 
+{{url}}/flashcards/9999
+
 ### GET Categories
 GET {{url}}/categories

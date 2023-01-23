@@ -4,3 +4,10 @@ export interface IFlashcard {
   front: string;
   back: string;
 }
+
+export interface ICategories {
+  id: number;
+  idCode: string;
+  name: string;
+  total: number;
+}
