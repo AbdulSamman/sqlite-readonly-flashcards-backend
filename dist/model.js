@@ -1,3 +1,25 @@
+import Database from "better-sqlite3";
+import * as tools from "./tools.js";
+const dbAbsolutePathAndFileName = tools.absolutifyPathAndFileName("src/data/db.sqlite");
+const db = new Database(dbAbsolutePathAndFileName);
+db.pragma(`journal_mode = WAL`);
+export const getFlashCards = () => {
+    const stmt = db.prepare("SELECT * FROM flashcards");
+    const flashCards = [];
+    for (const flashcard of stmt.iterate()) {
+        flashCards.push(flashcard);
+    }
+    console.log(flashCards);
+    return flashCards;
+};
+export const getCategories = () => {
+    const stmt = db.prepare("SELECT * FROM categories");
+    const categories = [];
+    for (let category of stmt.iterate()) {
+        categories.push(category);
+    }
+    return categories;
+};
 export const getApiInstructions = () => {
     return `
     

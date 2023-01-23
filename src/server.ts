@@ -1,11 +1,11 @@
 import express from "express";
 import dotenv from "dotenv";
-
+import cors from "cors";
 import * as model from "./model.js";
 dotenv.config();
 
 const app = express();
-
+app.use(cors());
 const port = process.env.PORT || 3000;
 
 app.get("/", (req: express.Request, res: express.Response) => {
@@ -19,6 +19,14 @@ app.get("/test", (req: express.Request, res: express.Response) => {
   });
 });
 
+app.get("/flashcards", (req: express.Request, res: express.Response) => {
+  res.status(200).json(model.getFlashCards());
+});
+
+app.get("/categories", (req: express.Request, res: express.Response) => {
+  res.status(200).json(model.getCategories());
+});
+
 app.listen(port, () => {
-  console.log(`server listining on http://localhost:${port}`);
+  console.log(`server listening on http://localhost:${port}`);
 });

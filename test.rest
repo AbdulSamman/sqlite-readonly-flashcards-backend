@@ -1,7 +1,14 @@
-@url = http://localhost:3120
+@url = http://localhost:3724
 
 ### BASE
 {{url}}
 
 ### GET test
 GET {{url}}/test
+
+### GET flashCards
+GET {{url}}/flashcards
+
+
+### GET Categories
+GET {{url}}/categories
