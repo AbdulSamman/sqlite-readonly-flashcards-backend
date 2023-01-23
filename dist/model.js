@@ -25,7 +25,7 @@ export const getFlashCard = (id) => {
     }
 };
 export const getCategories = () => {
-    const stmt = db.prepare(`SELECT f.category as categoryIdCode, c.name as categoryName, f.total FROM (SELECT category, COUNT(*) AS total FROM flashcards GROUP BY category) as f
+    const stmt = db.prepare(`SELECT f.category as idCode, c.name as name, f.total FROM (SELECT category, COUNT(*) AS total FROM flashcards GROUP BY category) as f
     INNER JOIN categories AS c ON f.category = c.idCode
     ORDER BY c.name	`);
     const categories = [];
