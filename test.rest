@@ -10,5 +10,11 @@ GET {{url}}/test
 GET {{url}}/flashcards
 
 
+### GET flashCard
+GET {{url}}/flashcards/2798
+
+### ALL FLASHCARDS IN A CATEGORY 
+GET {{url}}/flashcards/categories/emmet
+
 ### GET Categories
 GET {{url}}/categories
